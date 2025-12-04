@@ -1,348 +1,560 @@
-<!DOCTYPE HTML>
-<!--
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
 <head>
-	<title>Ashutosh Kale</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-	<link rel="stylesheet" href="assets/css/main.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh Kale | Senior Unity Developer</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-	<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-	<link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-	<link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-	<link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-	<link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-	<link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-	<link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-	<link rel="icon" type="image/png" sizes="192x192" href="images/favicon/android-icon-192x192.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-	<link rel="manifest" href="/manifest.json">
-	<meta name="msapplication-TileColor" content="#ffffff">
-	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-	<meta name="theme-color" content="#ffffff">
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0', transform: 'translateY(10px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .clip-path-slant { clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+        }
+        /* Mobile optimization for smooth scrolling */
+        html, body { overflow-x: hidden; }
+    </style>
 </head>
+<body class="bg-slate-50 text-slate-800 font-sans selection:bg-indigo-100 selection:text-indigo-900">
 
-<body class="is-preload">
+    <!-- Header -->
+    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-6 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <div class="w-8 h-8 md:w-10 md:h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-600/20 text-white font-bold text-lg md:text-xl shrink-0">AK</div>
+                <div>
+                    <h1 class="font-bold text-slate-900 tracking-tight leading-none text-base md:text-lg">Ashutosh Kale</h1>
+                    <span class="hidden sm:block text-xs text-slate-500 font-semibold tracking-wide">TEAM LEAD & UNITY DEVELOPER</span>
+                </div>
+            </div>
 
-	<!-- Header -->
-	<section id="header">
-		<header>
-			<span class="image avatar"><img src="images/0.jpg" alt="" /></span>
-			<h1 id="logo"><a href="#">Ashutosh Kale</a></h1>
-			<p style="color: white; font-size: 90%;">Currently coding at<br></p>
-			<b style="color: white;">RIGHTSOL PVT LTD </b>
-			<p style="color: white;"> Projects : <a href="https://logan-ak47.itch.io/" target="_blank">
-					logan-ak47.itch.io/</a></p>
-		</header>
-		<nav id="nav">
-			<ul>
-				<li><a href="#one" class="active">About</a></li>
-				<li><a href="#two">Things I can Do</a></li>
-				<li><a href="#three">A Few Accomplishments</a></li>
-				<li><a href="#four">Contact</a></li>
-			</ul>
-		</nav>
-		<footer>
-			<ul class="icons">
+            <nav class="hidden md:flex items-center space-x-1 bg-white/50 p-1.5 rounded-full border border-slate-200/60 backdrop-blur-sm shadow-sm">
+                <a href="#hero" class="nav-item flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm text-slate-500 hover:text-indigo-600 hover:bg-indigo-50">
+                    <i data-lucide="terminal" class="w-4 h-4"></i><span>Overview</span>
+                </a>
+                <a href="#skills" class="nav-item flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm text-slate-500 hover:text-indigo-600 hover:bg-indigo-50">
+                    <i data-lucide="cpu" class="w-4 h-4"></i><span>Skills</span>
+                </a>
+                <a href="#experience" class="nav-item flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm text-slate-500 hover:text-indigo-600 hover:bg-indigo-50">
+                    <i data-lucide="briefcase" class="w-4 h-4"></i><span>Journey</span>
+                </a>
+                <a href="#projects" class="nav-item flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm text-slate-500 hover:text-indigo-600 hover:bg-indigo-50">
+                    <i data-lucide="layers" class="w-4 h-4"></i><span>Projects</span>
+                </a>
+            </nav>
 
-				<li><a href="https://www.linkedin.com/in/ashutosh-kale-990687127" target="_blank"
-						class="no-underline"><img src="images/linkedin.svg" alt=""></a></li>
+            <!-- Resume Button: Visible on Mobile now -->
+            <a href="Ashutosh_Kale_Resume_Unity_Focused_Main_Resume.pdf" download class="flex items-center space-x-2 bg-slate-900 hover:bg-slate-800 text-white px-3 py-2 md:px-5 md:py-2.5 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm transition-all shadow-lg hover:shadow-xl shrink-0">
+                <i data-lucide="download" class="w-3 h-3 md:w-4 md:h-4"></i><span>Resume</span>
+            </a>
+        </div>
+    </header>
 
-				<li><a href="https://github.com/Logan-ak47" target="_blank"><img src="images/github.svg" alt=""></a>
-				</li>
-				<li><a href="mailto:kaleashutosh05@gmail.com" target="_blank"><img src="images/email.svg" alt=""></a>
-				</li>
-			</ul>
-		</footer>
-	</section>
+    <!-- Hero Section -->
+    <section id="hero" class="min-h-screen flex items-center pt-28 md:pt-24 relative overflow-hidden bg-white">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 clip-path-slant hidden lg:block"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
+        <div class="absolute top-1/2 -left-24 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
+        
+        <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            <div class="space-y-6">
+                <!-- Status Tag: Increased width for mobile to prevent cutoff -->
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-blue-50 border border-blue-100 rounded-full overflow-hidden max-w-full">
+                    <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse flex-shrink-0"></span>
+                    <div class="h-5 overflow-hidden relative w-[220px] sm:w-64">
+                         <span id="tag-text" class="text-blue-700 text-xs font-bold tracking-wide uppercase absolute w-full transition-all duration-500 whitespace-nowrap">Open to New Opportunities</span>
+                    </div>
+                </div>
+                
+                <!-- Headline: Adjusted font size for mobile -->
+                <div class="min-h-[140px] md:min-h-[160px] lg:min-h-[220px] flex flex-col justify-center py-2">
+                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
+                        <span id="headline-prefix" class="block transition-all duration-500 opacity-100 translate-y-0">Crafting</span>
+                        <span id="headline-highlight" class="block pb-2 transition-all duration-700 opacity-100 translate-x-0 text-gradient from-blue-600 to-indigo-600">Immersive Digital Worlds</span>
+                    </h1>
+                </div>
+                
+                <p class="text-base md:text-lg text-slate-600 max-w-lg leading-relaxed font-medium pt-2">
+                    Adaptable Unity Developer with <span class="text-slate-900 font-bold">7+ years</span> of experience. 
+                    Specialized in gameplay architecture, <span class="text-indigo-600 font-semibold">Addressables pipelines</span>, and optimizing high-scale games like <span class="text-slate-900 font-semibold">Ludo King</span>.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="#projects" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all shadow-lg shadow-indigo-600/20 hover:-translate-y-1">
+                        <i data-lucide="gamepad-2" class="w-5 h-5"></i><span>View Projects</span>
+                    </a>
+                    <a href="#contact" class="bg-white hover:bg-slate-50 text-slate-700 px-8 py-4 rounded-xl font-bold border border-slate-200 flex items-center justify-center space-x-2 transition-all shadow-sm hover:shadow-md hover:-translate-y-1">
+                        <i data-lucide="mail" class="w-5 h-5"></i><span>Contact Me</span>
+                    </a>
+                </div>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+                <!-- Socials -->
+                <div class="flex items-center space-x-6 pt-6 text-slate-400">
+                    <a href="https://github.com/logan-ak47" target="_blank" class="hover:text-slate-900 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                    <a href="https://www.linkedin.com/in/ashutosh-kale-55364121a" target="_blank" class="hover:text-blue-600 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    <div class="h-6 w-px bg-slate-200"></div>
+                    <div class="flex items-center space-x-2 text-sm font-semibold text-slate-500">
+                        <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-500"></i>
+                        <span>M.Sc Computer Science</span>
+                    </div>
+                </div>
+            </div>
 
-		<!-- Main -->
-		<div id="main">
+            <!-- Stats -->
+            <div class="relative hidden lg:block">
+                <div class="relative bg-white border border-slate-100 p-8 rounded-3xl shadow-2xl shadow-slate-200/50">
+                    <div class="flex justify-between items-center mb-8 border-b border-slate-100 pb-6">
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900">Career Impact</h3>
+                            <p class="text-slate-500 text-sm">Performance & Scale</p>
+                        </div>
+                        <div class="bg-indigo-50 p-2 rounded-lg"><i data-lucide="sparkles" class="w-5 h-5 text-indigo-600"></i></div>
+                    </div>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all flex items-center space-x-4">
+                            <div class="p-3 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="users" class="w-6 h-6"></i></div>
+                            <div><h4 class="text-2xl font-bold text-slate-800 tracking-tight">500M+</h4><p class="text-slate-500 text-xs font-semibold uppercase">Players Reached</p></div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all flex items-center space-x-4">
+                            <div class="p-3 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
+                            <div><h4 class="text-2xl font-bold text-slate-800 tracking-tight">7+ Yrs</h4><p class="text-slate-500 text-xs font-semibold uppercase">Experience</p></div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all flex items-center space-x-4">
+                            <div class="p-3 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="server" class="w-6 h-6"></i></div>
+                            <div><h4 class="text-2xl font-bold text-slate-800 tracking-tight">Node.js</h4><p class="text-slate-500 text-xs font-semibold uppercase">Backend Ready</p></div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all flex items-center space-x-4">
+                            <div class="p-3 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="trophy" class="w-6 h-6"></i></div>
+                            <div><h4 class="text-2xl font-bold text-slate-800 tracking-tight">Lead</h4><p class="text-slate-500 text-xs font-semibold uppercase">Team Management</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-			<!-- One -->
-			<section id="one">
+    <!-- Skills -->
+    <section id="skills" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="mb-16">
+                <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase mb-2 block">My Arsenal</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Technical Proficiency</h2>
+            </div>
 
-				<!-- IF YOU NEED HEADER IMAGE THEN UNCOMMENT THE BELOW CODE -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300 group h-full">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6"><i data-lucide="gamepad-2" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4">Core Engines</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Unity 2D/3D</span><span class="skill-tag">C#</span>
+                        <span class="skill-tag">UI Toolkit</span><span class="skill-tag">State Machines</span>
+                    </div>
+                </div>
 
-				<div class="image main" data-position="center">
-					<img src="images/skills-game-development (1).png" alt="" />
-				</div>
-				<div class="container">
-					<header class="major">
-						<h2>Hey Stranger</h2>
-						<p>Here's my <a
-								href="https://drive.google.com/file/d/17EnG66aVmSlKgr9eCzwSz3ZleQWeD_MO/view?usp=sharing"
-								target="_blank">RESUME</a>.</p>
-					</header>
-					<p>Love to build stuff, Whether it be a software or Games!</p>
-				</div>
-			</section>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300 group h-full">
+                    <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6"><i data-lucide="network" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4">Backend & Net</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Node.js</span><span class="skill-tag">Photon PUN</span>
+                        <span class="skill-tag">Netcode</span><span class="skill-tag">MongoDB</span>
+                    </div>
+                </div>
 
-			<!-- Two -->
-			<section id="two">
-				<div class="container">
-					<h3>Things I Can Do</h3></br>
-					<!-- <p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer lorem ipsum dolor sit amet.</p> -->
-					<ul class="feature-icons">
-						<li><img src="images/arrow.svg" alt="" style="padding-right: 10px;"> <b>Write clean & robust
-								Code </li>
-						<li><img src="images/arrow.svg" alt="" style="padding-right: 10px;"> Unity Engine</li>
-						<li><img src="images/arrow.svg" alt="" style="padding-right: 10px;">Coding in C# and javascript</li>
-						<li><img src="images/arrow.svg" alt="" style="padding-right: 10px;">Network Api's and
-							communication</li>
-						<li><img src="images/arrow.svg" alt="" style="padding-right: 10px;">Project planning &
-							estimations</li>
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300 group h-full">
+                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6"><i data-lucide="zap" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4">Performance</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Addressables</span><span class="skill-tag">Frame Debugger</span>
+                        <span class="skill-tag">Profiling</span><span class="skill-tag">Memory Tuning</span>
+                    </div>
+                </div>
 
-						<li><img src="images/arrow.svg" alt="" style="padding-right: 10px;">Multiplayer Games with Node.js
-							Socket.io</b> </li>
-						
+                <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300 group h-full">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6"><i data-lucide="box" class="w-6 h-6"></i></div>
+                    <h3 class="text-lg font-bold text-slate-900 mb-4">Architecture</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="skill-tag">Modular Systems</span><span class="skill-tag">Event-Driven</span>
+                        <span class="skill-tag">CI/CD</span><span class="skill-tag">Agile/Scrum</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-					</ul>
-				</div>
-			</section>
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-24 bg-slate-50 border-t border-slate-200">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center gap-4 mb-16">
+                <div class="p-3 bg-indigo-100 rounded-2xl text-indigo-700"><i data-lucide="briefcase" class="w-8 h-8"></i></div>
+                <div>
+                    <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase">Career Path</span>
+                    <h2 class="text-3xl md:text-3xl font-bold text-slate-900">Professional Journey</h2>
+                </div>
+            </div>
 
-			<!-- Three -->
-			<section id="three">
-				<div class="container">
-					<h3>A Few Accomplishments</h3>
-					<p>Here are some of my personal and professional projects that I have worked on</p>
-					<div class="features">
-						<article>
-							<a href="https://ludoking.com/" target="_blank" class="image"><img
-									src="images/Ludo King.png" alt="" /></a>
-							<div class="inner">
-								<h4> <a href="https://ludoking.com/" target="_blank" ?>Ludo King </a></h4>
-								<h5> <a href="https://ludoking.com/" target="_blank" ?>A Global Sensation with 500
-										Million Downloads!
-									</a></h5>
-								Mega-hit Ludo King - the global revival of the classic Ludo board game. Ranked among
-								the
-								top played games on the internet with one of the largest online gaming communities
-								on
-								the internet!
-								<ul>
-									<!-- <li>Unity on front end backend with Nodejs and Socket.io</li>
-											<li>Designed the Entire app architecture for users</li>
-											<li>Whole Lobby  UX and functional implementation</li>
-											<li>Handled Entire multiplayer aspects of the games</li>
-											<li>Some game developments inside the app.</li> -->
-								</ul>
-							</div>
-						</article>
-						
-						<article>
-							<!-- <a href="https://www.khelfactory.com/" target="_blank" class="image"><img src="images/rsz_annotation_2020-07-11_180639.png" alt="" /></a> -->
-							<div class="container">
-								<h4> Game Developer </a></h4>
-								<p><b>Gametion Technlogies Pvt. Ltd. (Jan 2021 - Feb 2022)</b><br>
-									Handled responsibilities for
-								</p>
+            <div class="relative border-l-2 border-slate-200 ml-3 md:ml-6 space-y-12 pb-12">
+                
+                <!-- Role 1: Rightsol -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-indigo-600 shadow-sm"></span>
+                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                        <h3 class="text-xl md:text-2xl font-bold text-slate-900">Team Lead - Game Development</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wide">Nov 2023 - Present</span>
+                    </div>
+                    <h4 class="text-slate-600 font-medium text-lg mb-4">Rightsol Private Limited / Programming Hub</h4>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
+                            <li>Led end-to-end development for <strong>Champion Chase</strong> and <strong>Bright Words</strong>, owning core loops and progression.</li>
+                            <li>Architected systems using <strong>UI Toolkit</strong> and optimized content delivery via <strong>Addressables</strong>, reducing app size by ~30%.</li>
+                            <li>Eliminated GC spikes and rendering stutters using Unity Profiler & Frame Debugger.</li>
+                            <li>Mentored developers, managed sprint planning, and integrated backend (Node.js/REST) for live-ops.</li>
+                        </ul>
+                    </div>
+                </div>
 
-								<ul>
-									<li>Handling the Ludo King Development for TV platform</li>
-									<li>Redesigning UI & UX elements for the targeted platform </li>
-									<li>Developing systems like Tv Navigation & necessary gameplay changes for the
-										targeted platform </li>
+                <!-- Role 2: UST Global -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-slate-300 group-hover:border-indigo-400 transition-colors shadow-sm"></span>
+                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                        <h3 class="text-lg md:text-xl font-bold text-slate-900">Software Developer Engineer I</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wide">Jul 2022 - Nov 2023</span>
+                    </div>
+                    <h4 class="text-slate-600 font-medium text-lg mb-4">UST Global Pvt. Ltd.</h4>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                         <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
+                            <li>Built internal tools with <strong>Node.js & JavaScript</strong>; designed scalable REST APIs for front-end consumption.</li>
+                            <li>Worked with Configura CET to design and configure 3D warehouse models.</li>
+                            <li>Automated workflows to reduce turnaround times by ~25% across cross-functional teams.</li>
+                        </ul>
+                    </div>
+                </div>
 
-							</div>
-						</article>
-						<!-- ROKIT PROJECT DATA -->
-						<!-- <article>
-							<a href="https://www.linkedin.com/company/rokit-games/" target="_blank" class="image"><img
-									src="images/ROKiT Games.jpg" alt="" /></a>
-							<div class="inner">
-								Founded in 2019 and headquartered in Los Angeles, ROKiT Games is the nascent publishing
-								arm of the ROKiT Group.
-							
-							</div>
-						</article> -->
-						<article>
-							<article>
-								<!-- <a href="https://www.khelfactory.com/" target="_blank" class="image"><img src="images/rsz_annotation_2020-07-11_180639.png" alt="" /></a> -->
-								<div class="container">
-									<h4>Freelance Game Developer </a></h4>
-									<p><b>ROKiT Games (Feb 2022 - July 2022)</b><br>
-										Previously responsible for
-									</p>
+                <!-- Role 3: Freelance / ROKIT -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-slate-300 group-hover:border-indigo-400 transition-colors shadow-sm"></span>
+                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                        <h3 class="text-lg md:text-xl font-bold text-slate-900">Freelance Unity Developer</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wide">Feb 2022 - Jul 2022</span>
+                    </div>
+                    <h4 class="text-slate-600 font-medium text-lg mb-4">ROKIT Games</h4>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                         <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
+                            <li>Prototyped gameplay systems and modular components for rapid experimentation.</li>
+                            <li>Integrated backend endpoints and telemetry loops for iteration feedback.</li>
+                            <li>Refactored legacy codebases to ensure clean, testable C# architecture.</li>
+                        </ul>
+                    </div>
+                </div>
 
-									<ul>
-										<li>Integrating Unity Games with Wagr(Real money gaming platform) made on
-											Android studio </li>
-										<li>Worked on developing the Critter Sort Game</li>
-										<li>Redesigning UI & UX along with gameplay changes to the Scarab Sudoku game
-										</li>
-										<li>Worked on 3D racing game, Handling the UI changes and gameplay bugs </li>
+                <!-- Role 4: Gametion -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-slate-300 group-hover:border-indigo-400 transition-colors shadow-sm"></span>
+                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                        <h3 class="text-lg md:text-xl font-bold text-slate-900">Game Developer</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wide">Jan 2021 - Jul 2022</span>
+                    </div>
+                    <h4 class="text-slate-600 font-medium text-lg mb-4">Gametion Technologies (Ludo King)</h4>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <div class="mb-3 pb-3 border-b border-slate-100">
+                            <p class="text-indigo-600 font-bold text-sm flex items-center gap-2">
+                                <i data-lucide="trophy" class="w-4 h-4"></i> Key Impact: Ludo King (500M+ Downloads)
+                            </p>
+                        </div>
+                        <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
+                            <li>Implemented voice-chat prototypes and new UI features.</li>
+                            <li>Supported platform adaptations (TV/Mobile) with optimized input handling.</li>
+                            <li>Collaborated with artists to maintain stability on a massive 50M+ DAU base.</li>
+                        </ul>
+                    </div>
+                </div>
 
-								</div>
-							</article>
-							<!-- <ROKI GAMES DATA> -->
-							<!-- ludokingProjectdata -->
+                <!-- Role 5: KhelGroup -->
+                <div class="relative pl-8 md:pl-12 group">
+                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-slate-300 group-hover:border-indigo-400 transition-colors shadow-sm"></span>
+                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
+                        <h3 class="text-lg md:text-xl font-bold text-slate-900">Software Developer</h3>
+                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wide">Aug 2017 - Jan 2021</span>
+                    </div>
+                    <h4 class="text-slate-600 font-medium text-lg mb-4">The KhelGroup Pvt. Ltd.</h4>
+                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
+                        <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
+                            <li>Built <strong>Feed Us Pirates</strong> (2D): Managed levels, animation pipelines, and UI.</li>
+                            <li>Designed <strong>KhelFactory</strong> (Real-money PvP hub): Implemented multiplayer layer and data sync.</li>
+                            <li>Developed backend CRUD services in <strong>Node.js + MongoDB</strong> for leaderboards and sessions.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-							<!--  -->
-							<article>
-								<a href="https://www.khelfactory.com/" target="_blank" class="image"><img
-										src="images/rsz_annotation_2020-07-11_180639.png" alt="" /></a>
-								<div class="inner">
-									<h4> <a href="https://www.khelfactory.com/" target="_blank" ?>Khelfactory </a></h4>
-									<h5> <a href="https://www.khelfactory.com/" target="_blank" ?>Play Games Earn Money
-										</a>
-									</h5>
+    <!-- Projects Grid -->
+    <section id="projects" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6">
+            <div class="flex items-center justify-between mb-12">
+                <div>
+                    <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase mb-2 block">Portfolio</span>
+                    <h2 class="text-3xl md:text-3xl font-bold text-slate-900">Selected Projects</h2>
+                </div>
+                <a href="https://logan-ak47.itch.io/" target="_blank" class="hidden md:flex items-center gap-2 text-indigo-600 hover:text-indigo-800 transition-colors text-sm font-bold bg-indigo-50 px-4 py-2 rounded-lg">
+                    View Itch.io <i data-lucide="external-link" class="w-4 h-4"></i>
+                </a>
+            </div>
 
-									A platform for casual games. Here users can come and play some of their favourite
-									games
-									and earn actual cash prizes.
-									<ul>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Ludo King -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
+                    <div class="flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Ludo King</h3><span class="badge">Featured</span></div>
+                            <div class="icon-box"><i data-lucide="crown" class="w-5 h-5"></i></div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">UI feature work, gameplay polish, and voice-chat prototype for a global hit.</p>
+                        <div class="mb-4 p-2 bg-amber-50 rounded border border-amber-100 text-xs font-bold text-amber-700 flex gap-2"><i data-lucide="trophy" class="w-4 h-4"></i> 500M+ Downloads</div>
+                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Unity</span><span class="tag">High Scale</span></div>
+                    </div>
+                </div>
 
-									</ul>
-								</div>
-							</article>
-							<article>
-								<div class="container">
-									<h4>Software Engineer</a></h4>
-									<p><b>Khelgroup Pvt. Ltd. (Augst 2017 - Jan 2021)</b><br>
-										As a member of core team I did
-									</p>
+                <!-- Champion Chase -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
+                    <div class="flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Champion Chase</h3></div>
+                            <div class="icon-box"><i data-lucide="zap" class="w-5 h-5"></i></div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Superhero 2D semi-casual game. Modular systems, Addressables pipeline, and optimized rendering.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Unity 2D</span><span class="tag">Addressables</span></div>
+                    </div>
+                </div>
 
-									<ul>
-										<li>Contributed to the development of the Khelfactory platform</li>
-										<li>Worked on <b>Node.js & Socket.io</b> for implementing basic API functionalites and Multiplayer games. </li>
-										
-										<li>Designed front end architecture in <b>Unity & C#</b></li>
-										<li>Developed Games like <b> Ludo, Tetris, Sudoku, Blocktrix, River Rush, Aqua
-												Jump</b> in Unity for khelfactory platform</li>
-										<li>Added the analytics tools like <b> Smartlook</b> for user acquisition &
-											retention for marketing team</li>
-									</ul>
-									
-								</div>
-							</article>
+                <!-- Rokit All Star Racing -->
+                 <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
+                    <div class="flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Rokit All Star Racing</h3></div>
+                            <div class="icon-box"><i data-lucide="car" class="w-5 h-5"></i></div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Fixed critical UI bugs and implemented gameplay enhancements for a smooth racing experience.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Bug Fixes</span><span class="tag">Gameplay</span></div>
+                    </div>
+                </div>
 
+                <!-- Bright Words -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
+                    <div class="flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Bright Words</h3></div>
+                            <div class="icon-box"><i data-lucide="type" class="w-5 h-5"></i></div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Word-puzzle game. UI Toolkit-driven interface, clean state management, and content tooling.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">UI Toolkit</span><span class="tag">Tooling</span></div>
+                    </div>
+                </div>
 
+                <!-- KhelFactory -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
+                    <div class="flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">KhelFactory</h3></div>
+                            <div class="icon-box"><i data-lucide="server" class="w-5 h-5"></i></div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">PvP hub with Node.js backend, multiplayer integration, and modular minigames.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Multiplayer</span><span class="tag">Node.js</span></div>
+                    </div>
+                </div>
 
-							
-								<a href="https://play.google.com/store/apps/details?id=com.gamesfree.feeduspirates&hl=en_IN"
-									target="_blank" class="image"><img src="images/rsz_807785.jpg" alt="" /></a>
-								<div class="inner">
-									<h4> <a href="https://play.google.com/store/apps/details?id=com.gamesfree.feeduspirates&hl=en_IN"
-											target="_blank">Feed Us Pirates </a></h4>
-									<p>A very interactive 2d game in which you play as a Piranha and kill the pirates.
-									</p>
-									<ul>
-									</ul>
-								</div>
-								
-								<ul>
-									<li>Designed the UI/UX for Feed us game as per client requirement</li>
-									<li>Integrated game sounds</li>
-									<li>Developed the game and deployed it on both Android and iOS</li>
-									<li>Designed some of the gameplay features </li>
-									<li>Implemented In-App Purchases</li>
-								</ul>
-								<p><b>Other Projects<br></b>
-									I was also responsible for some of the internal projects which the company required
-								</p>
-								<ul>
-									<li>Made a Horse racing game using <b>CreateJS</b> where user can bet chips on
-										horses and the winner was decided randomly</li>
-									<li>Made an <b>AR app using Unity</b> where a webview of desired website was shown
-										on a cube once the camera was pointed to company logo</li>
-									<li>Created some games using <b>Construct 2 engine</b> </li>
-	
-								</ul>
-							
-							<!-- <article>
-							<div class="container">
-								<h4> Game Developer </h4>
-								<p><b>Cygnus group Pvt. Ltd. (May 2018 - Nov 2018)</b><br>
-									As a Game Developer I
-								</p>
-							</div>
-						</article>
-						<article>
-							 <a href="https://play.google.com/store/apps/details?id=com.gamesfree.feeduspirates&hl=en_IN" target="_blank" class="image"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Noun_62983_cc_school_icon.svg/480px-Noun_62983_cc_school_icon.svg.png" alt="" /></a> -->
-							<div class="container">
-								<h4> Game Programming Teacher (Visitng Faculty) </h4>
-								<p><b>Lords Universal College (Jul 2018 - Oct 2018)</b><br>
-									As a game programming teacher I was
-								</p>
-								<ul>
-									<li>Responsible for teaching basic concepts regarding Game development cycle</li>
-									<li>Teaching fundamentals of <b>DirectX 11 , C++ </b>& tools like <b>Unity 3D</b>
-									</li>
-									<li>Basics of Shaders, Textures, Lighting</li>
-								</ul>
+                 <!-- Feed Us Pirates -->
+                 <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
+                    <div class="flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-4">
+                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Feed Us Pirates</h3></div>
+                            <div class="icon-box"><i data-lucide="anchor" class="w-5 h-5"></i></div>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-6 flex-grow">Designed Inventory system & UI implementation. Worked on complex 2D animations.</p>
+                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">2D</span><span class="tag">Inventory</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-							</div>
-						</article>
+    <!-- Footer -->
+    <section id="contact" class="py-24 bg-slate-900 text-white border-t border-slate-800">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Let's Build Something Great</h2>
+            <p class="text-slate-400 mb-10 max-w-xl mx-auto text-lg">Available for Lead Unity & Multiplayer Roles.</p>
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
+                <a href="mailto:kaleashutosh05@gmail.com" class="btn-primary w-full md:w-auto justify-center"><i data-lucide="mail" class="w-5 h-5"></i> kaleashutosh05@gmail.com</a>
+                <a href="tel:+919773698339" class="btn-secondary w-full md:w-auto justify-center"><i data-lucide="phone" class="w-5 h-5"></i> +91 97736 98339</a>
+            </div>
+            <p class="text-slate-500 text-sm">© 2025 Ashutosh Kale</p>
+        </div>
+    </section>
 
+    <script>
+        lucide.createIcons();
 
-						<!-- <article>
-							<a href="https://logan-ak47.itch.io/planet-rush" target="_blank" class="image"><img
-									src="images/rsz_planet_save_image.png" alt="" /></a>
-							<div class="inner">
-								<h4> <a href="https://logan-ak47.itch.io/planet-rush" target="_blank">Planet
-										Survivor</a></h4>
-								<p>A Survivor game where you need to drive the car on the planet which is shrinking
-									continuously while dodging the meteors.</p>
+        // Reusable Styles Injection to keep HTML clean
+        const style = document.createElement('style');
+        style.innerHTML = `
+            .skill-tag { @apply px-3 py-1.5 bg-slate-50 text-slate-600 text-sm font-medium rounded-lg border border-slate-100; }
+            .badge { @apply bg-indigo-50 text-indigo-600 text-[10px] font-bold px-2 py-0.5 rounded-full border border-indigo-100 uppercase tracking-wide ml-2; }
+            .icon-box { @apply bg-indigo-50 p-2.5 rounded-xl text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300; }
+            .tag {
+                display: inline-block;
+                font-size: 0.75rem;
+                font-weight: 600;
+                padding: 0.5rem 0.875rem;
+                border-radius: 9999px;
+                transition: all 0.2s;
+            }
+            .btn-primary { @apply flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-bold transition-all hover:-translate-y-1 shadow-lg; }
+            .btn-secondary { @apply flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold border border-white/10 transition-all hover:-translate-y-1 backdrop-blur-sm; }
+        `;
+        document.head.appendChild(style);
 
-							</div>
-						</article> -->
+        // Color project tags based on content
+        function colorProjectTags() {
+            const tagColors = {
+                'Unity': 'bg-blue-600 text-white',
+                'Unity 2D': 'bg-blue-600 text-white',
+                'High Scale': 'bg-purple-600 text-white',
+                'Addressables': 'bg-indigo-600 text-white',
+                'Bug Fixes': 'bg-amber-600 text-white',
+                'Gameplay': 'bg-emerald-600 text-white',
+                'UI Toolkit': 'bg-cyan-600 text-white',
+                'Tooling': 'bg-slate-600 text-white',
+                'Multiplayer': 'bg-rose-600 text-white',
+                'Node.js': 'bg-green-600 text-white',
+                '2D': 'bg-teal-600 text-white',
+                'Inventory': 'bg-orange-600 text-white'
+            };
 
+            document.querySelectorAll('.tag').forEach(tag => {
+                const text = tag.textContent.trim();
+                const colorClass = tagColors[text] || 'bg-slate-600 text-white';
+                tag.className = `tag ${colorClass}`;
+            });
+        }
 
+        // Run on page load
+        setTimeout(colorProjectTags, 0);
 
-						
-					</div>
-				</div>
-			</section>
+        // Animation Logic
+        const headlines = [
+            { prefix: "Crafting", highlight: "Immersive Digital Worlds", color: "from-blue-600 to-indigo-600" }, 
+            { prefix: "Optimizing", highlight: "Experiences for 500M+ Users", color: "from-indigo-600 to-violet-600" }, 
+            { prefix: "Architecting", highlight: "Real-Time Multiplayer Systems", color: "from-cyan-600 to-blue-600" }
+        ];
+        const tags = ["Open to New Opportunities", "Ready to Build Great Games", "Available for Hire"];
+        let index = 0;
+        
+        setInterval(() => {
+            const prefix = document.getElementById('headline-prefix');
+            const highlight = document.getElementById('headline-highlight');
+            const tag = document.getElementById('tag-text');
+            
+            [prefix, highlight, tag].forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(10px)'; });
 
-			<!-- Four -->
-			<section id="four">
-				<div class="container">
-					<h3>Contact Me</h3>
-					<!-- <p>I do</p> -->
-					<ul class="feature-icons">
-						<li><a href="mailto:kaleashutosh05@gmail.com"><img src="images/email.svg" alt=""
-									style="padding-right: 10px;"> kaleashutosh05@gmail.com</a></li>
-						<li><a href="tel:+919773698339"><img src="images/phone.svg" alt="" style="padding-right: 10px;">
-								+919773698339 </a></li>
+            setTimeout(() => {
+                index = (index + 1) % headlines.length;
+                prefix.textContent = headlines[index].prefix;
+                highlight.textContent = headlines[index].highlight;
+                tag.textContent = tags[index % tags.length];
+                highlight.className = `block pb-2 transition-all duration-700 opacity-100 translate-x-0 text-gradient ${headlines[index].color}`;
+                
+                [prefix, highlight, tag].forEach(el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; });
+            }, 500);
+        }, 4000);
 
-					</ul>
+        // Navbar Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            // Check if scroll is > 50 OR if it is mobile view (always add background for better visibility on mobile)
+            if (window.scrollY > 50 || window.innerWidth < 768) {
+                // Keep bg-white/80 on mobile always if prefered, but logic here respects scroll
+            }
+            // Actually, Tailwind classes on nav are static 'bg-white/80' in my update above for better mobile read.
+            // But if we want dynamic scroll effect on desktop:
+             if (window.scrollY > 50) {
+                 nav.classList.add('shadow-sm', 'py-3');
+                 nav.classList.remove('py-4', 'md:py-6');
+             } else {
+                 nav.classList.remove('shadow-sm', 'py-3');
+                 nav.classList.add('py-4', 'md:py-6');
+             }
+        });
 
-				</div>
-			</section>
+        // Active Navigation Highlighting
+        function updateActiveNav() {
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-item');
 
+            let currentSection = '';
+            const scrollPosition = window.scrollY + 200; // Offset for better triggering
 
-			<!-- Footer -->
-			<section id="footer">
-				<div class="container">
-					
-				</div>
-			</section>
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
 
-		</div>
+                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                    currentSection = section.getAttribute('id');
+                }
+            });
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+            // If at the very top, highlight overview
+            if (window.scrollY < 100) {
+                currentSection = 'hero';
+            }
 
+            navItems.forEach(item => {
+                const href = item.getAttribute('href').substring(1); // Remove the '#'
+
+                if (href === currentSection) {
+                    item.classList.add('bg-indigo-600', 'text-white');
+                    item.classList.remove('text-slate-500', 'hover:bg-indigo-50');
+                } else {
+                    item.classList.remove('bg-indigo-600', 'text-white');
+                    item.classList.add('text-slate-500', 'hover:bg-indigo-50');
+                }
+            });
+        }
+
+        // Run on scroll and page load
+        window.addEventListener('scroll', updateActiveNav);
+        window.addEventListener('load', updateActiveNav);
+        updateActiveNav(); // Initial call
+    </script>
 </body>
-
 </html>
-
