@@ -1,564 +1,831 @@
 ﻿<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Senior Unity Developer with 7+ years of experience building scalable mobile games, multiplayer systems, and performance-focused gameplay for products used by millions of players.">
-    <title>Ashutosh Kale | Senior Unity Developer | Multiplayer & Performance</title>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    animation: {
-                        'fade-in': 'fadeIn 0.5s ease-out forwards',
-                    },
-                    keyframes: {
-                        fadeIn: {
-                            '0%': { opacity: '0', transform: 'translateY(10px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        }
-                    }
-                }
-            }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ashutosh Kale | Senior Unity Developer | Unity C# Developer for Remote Roles</title>
+  <meta name="description" content="Ashutosh Kale is a Senior Unity Developer and Team Lead with 7+ years of experience shipping Unity games, gameplay systems, multiplayer features, and live product updates for remote-ready teams.">
+  <meta name="author" content="Ashutosh Kale">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://logan-ak47.github.io/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ashutosh Kale | Senior Unity Developer | Unity C# Developer for Remote Roles">
+  <meta property="og:description" content="Senior Unity Developer with shipped Unity game experience across gameplay systems, multiplayer, live updates, and remote-ready collaboration.">
+  <meta property="og:url" content="https://logan-ak47.github.io/">
+  <meta property="og:site_name" content="Ashutosh Kale Portfolio">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ashutosh Kale | Senior Unity Developer">
+  <meta name="twitter:description" content="Unity C# developer for remote roles across gameplay, systems, tools, and multiplayer.">
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ashutosh Kale",
+      "url": "https://logan-ak47.github.io/",
+      "jobTitle": "Senior Unity Developer",
+      "description": "Senior Unity Developer and Team Lead with 7+ years of experience shipping Unity games, gameplay systems, multiplayer features, and live product updates.",
+      "sameAs": [
+        "https://github.com/logan-ak47",
+        "https://www.linkedin.com/in/ashutosh-kale-990687127/"
+      ],
+      "knowsAbout": [
+        "Unity",
+        "C#",
+        "Gameplay Engineering",
+        "Unity Systems Engineering",
+        "Multiplayer Game Development",
+        "Game Performance Optimization",
+        "Remote Collaboration"
+      ]
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif']
+          }
         }
-    </script>
-
-    <style>
-        .clip-path-slant { clip-path: polygon(10% 0, 100% 0, 100% 100%, 0% 100%); }
-        .text-gradient {
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
-        }
-        /* Mobile optimization for smooth scrolling */
-        html, body { overflow-x: hidden; }
-    </style>
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth }
+    body { overflow-x: hidden }
+    .text-gradient {
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to))
+    }
+    .icon-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: .625rem;
+      border-radius: .75rem;
+      background: #eef2ff;
+      color: #4f46e5
+    }
+    .tag {
+      display: inline-block;
+      font-size: .75rem;
+      font-weight: 600;
+      padding: .5rem .875rem;
+      border-radius: 9999px
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 1.5rem;
+      padding: 2rem;
+      box-shadow: 0 1px 2px rgba(15,23,42,.04)
+    }
+    .callout {
+      padding: 1rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 1rem;
+      background: #f8fafc;
+      color: #475569;
+      line-height: 1.7
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .75rem;
+      padding: 1rem 2rem;
+      border-radius: .75rem;
+      font-weight: 700;
+      transition: .2s
+    }
+    .btn-primary {
+      background: #4f46e5;
+      color: #fff;
+      box-shadow: 0 10px 30px rgba(79,70,229,.25)
+    }
+    .btn-secondary {
+      background: rgba(255,255,255,.08);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.12)
+    }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #2563eb;
+      outline-offset: 3px;
+      border-radius: .75rem
+    }
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -3rem;
+      background: #0f172a;
+      color: #fff;
+      padding: .75rem 1rem;
+      border-radius: .75rem;
+      z-index: 100;
+      transition: top .2s
+    }
+    .skip-link:focus { top: 1rem }
+    section[id] { scroll-margin-top: 7rem }
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto }
+      *,*::before,*::after { animation: none!important; transition: none!important }
+    }
+  </style>
 </head>
 <body class="bg-slate-50 text-slate-800 font-sans selection:bg-indigo-100 selection:text-indigo-900">
-
-    <!-- Header -->
-    <header id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 py-4 md:py-6 bg-white/80 backdrop-blur-md border-b border-slate-200">
-        <div class="container mx-auto px-4 md:px-6 flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 md:w-10 md:h-10 bg-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-600/20 text-white font-bold text-lg md:text-xl shrink-0">AK</div>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <header id="navbar" class="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200 transition-all duration-300 py-4 md:py-6">
+    <div class="container mx-auto px-4 md:px-6">
+      <div class="flex justify-between items-center gap-4">
+        <div class="flex items-center space-x-3">
+          <div class="w-8 h-8 md:w-10 md:h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white font-bold">AK</div>
+          <div>
+            <p class="font-bold text-slate-900 text-base md:text-lg">Ashutosh Kale</p>
+            <span class="hidden sm:block text-xs text-slate-500 font-semibold tracking-wide">SENIOR UNITY DEVELOPER</span>
+          </div>
+        </div>
+        <nav aria-label="Primary" class="hidden md:flex items-center space-x-1 bg-white/50 p-1.5 rounded-full border border-slate-200/60">
+          <a href="#hero" class="nav-item px-4 py-2 rounded-full text-sm text-slate-500">Overview</a>
+          <a href="#proof" class="nav-item px-4 py-2 rounded-full text-sm text-slate-500">Proof</a>
+          <a href="#case-studies" class="nav-item px-4 py-2 rounded-full text-sm text-slate-500">Case Studies</a>
+          <a href="#remote-ready" class="nav-item px-4 py-2 rounded-full text-sm text-slate-500">Remote</a>
+        </nav>
+        <a href="https://drive.google.com/file/d/114osjtvp6-rs__iOFh8W-CHExYngrXcY/view?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open resume in a new tab" class="flex items-center space-x-2 bg-slate-900 text-white px-3 py-2 md:px-5 md:py-2.5 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Resume</span>
+        </a>
+      </div>
+      <nav aria-label="Mobile section navigation" class="md:hidden mt-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
+        <a href="#hero" class="shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 bg-slate-100 border border-slate-200">Overview</a>
+        <a href="#proof" class="shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 bg-slate-100 border border-slate-200">Proof</a>
+        <a href="#case-studies" class="shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 bg-slate-100 border border-slate-200">Case Studies</a>
+        <a href="#remote-ready" class="shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 bg-slate-100 border border-slate-200">Remote</a>
+        <a href="#contact" class="shrink-0 px-4 py-2 rounded-full text-sm font-semibold text-slate-600 bg-slate-100 border border-slate-200">Contact</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content">
+    <section id="hero" class="min-h-screen flex items-center pt-28 bg-white">
+      <div class="container mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+        <div class="space-y-6">
+          <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 border border-blue-100 rounded-full">
+            <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse"></span>
+            <span id="tag-text" class="text-blue-700 text-xs font-bold tracking-wide uppercase">Available for Remote Senior Unity Roles</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.1]">
+            <span id="headline-prefix" class="block">Building</span>
+            <span id="headline-highlight" class="block pb-2 text-gradient from-blue-600 to-indigo-600">Unity Systems That Ship Reliably</span>
+          </h1>
+          <p class="text-base md:text-lg text-slate-600 max-w-2xl leading-relaxed font-medium">Senior Unity Developer and Team Lead with <span class="text-slate-900 font-bold">7+ years</span> of commercial experience shipping Unity games, gameplay systems, and live product updates. My strongest work sits at the intersection of gameplay, systems thinking, technical ownership, and clear delivery inside both indie teams and scaled live products such as <span class="text-slate-900 font-semibold">Ludo King</span>.</p>
+          <div class="flex flex-wrap gap-3 text-sm font-semibold text-slate-600">
+            <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2">Target roles: Senior Unity Developer, Gameplay Engineer, Unity Systems Engineer</span>
+            <span class="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2">Based in India (IST), with practical overlap for UK/EU and part-day overlap for US teams</span>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#proof" class="btn btn-primary">See Proof First</a>
+            <a href="#contact" class="bg-white text-slate-700 px-8 py-4 rounded-xl font-bold border border-slate-200 text-center">Discuss Remote Roles</a>
+          </div>
+          <div class="flex items-center space-x-6 pt-2 text-slate-400">
+            <a href="https://github.com/logan-ak47" target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" class="hover:text-slate-900">GitHub</a>
+            <a href="https://www.linkedin.com/in/ashutosh-kale-990687127/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn profile" class="hover:text-blue-600">LinkedIn</a>
+            <div class="h-6 w-px bg-slate-200"></div>
+            <div class="text-sm font-semibold text-slate-500">M.Sc Computer Science</div>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <div class="bg-white border border-slate-100 p-8 rounded-3xl shadow-2xl shadow-slate-200/50">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="card p-5">
+                <h2 class="text-2xl font-bold text-slate-800">500M+</h2>
+                <p class="text-slate-500 text-xs font-semibold uppercase">Product Scale Touched</p>
+              </div>
+              <div class="card p-5">
+                <h2 class="text-2xl font-bold text-slate-800">7+ Yrs</h2>
+                <p class="text-slate-500 text-xs font-semibold uppercase">Commercial Experience</p>
+              </div>
+              <div class="card p-5">
+                <h2 class="text-2xl font-bold text-slate-800">Cross-stack</h2>
+                <p class="text-slate-500 text-xs font-semibold uppercase">Gameplay + Backend</p>
+              </div>
+              <div class="card p-5">
+                <h2 class="text-2xl font-bold text-slate-800">Lead</h2>
+                <p class="text-slate-500 text-xs font-semibold uppercase">Planning & Mentoring</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="proof" class="py-24 bg-slate-50 border-t border-slate-200">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mb-14">
+          <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase block mb-2">Featured Proof</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Fast evidence for recruiters and hiring managers</h2>
+          <p class="text-slate-600 text-lg leading-relaxed">These are the three fastest proof points for evaluating my fit: shipped commercial scale, hands-on systems ownership, and cross-stack game engineering range.</p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <article class="card">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div>
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Shipped at Scale</p>
+                <h3 class="text-2xl font-bold text-slate-900">Ludo King</h3>
+                <p class="text-slate-500 mt-2">Commercial live-game work inside one of mobile gaming's biggest titles.</p>
+              </div>
+              <div class="icon-box">LK</div>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-5">Worked on platform adaptation, UI conversion, and multiplayer-facing validation inside a large live Unity codebase where stability, usability, and release confidence mattered.</p>
+            <div class="callout mb-5">
+              <strong class="text-slate-900">Why it matters:</strong> shows experience shipping in a mature production environment with real scale, review pressure, and reliability expectations.<br>
+              <strong class="text-slate-900">What this proves:</strong> can contribute safely to high-traffic commercial Unity products.
+            </div>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="tag bg-blue-600 text-white">Unity</span>
+              <span class="tag bg-amber-600 text-white">Live Game</span>
+              <span class="tag bg-purple-600 text-white">Scale</span>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://play.google.com/store/apps/details?id=com.ludo.king&hl=en_IN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-2 rounded-xl">Store page</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div>
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Systems Ownership</p>
+                <h3 class="text-2xl font-bold text-slate-900">Champion Chase</h3>
+                <p class="text-slate-500 mt-2">Lead-built semi-casual Unity title focused on reusable systems and delivery speed.</p>
+              </div>
+              <div class="icon-box">CC</div>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-5">Led gameplay systems, progression design, delivery planning, and reusable architecture for a shipped hybrid-casual title built to support post-launch iteration.</p>
+            <div class="callout mb-5">
+              <strong class="text-slate-900">Why it matters:</strong> this is the clearest example of hands-on technical ownership rather than feature-only implementation.<br>
+              <strong class="text-slate-900">What this proves:</strong> end-to-end ownership, gameplay architecture thinking, and scalable content delivery.
+            </div>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="tag bg-blue-600 text-white">Unity 2D</span>
+              <span class="tag bg-indigo-600 text-white">Addressables</span>
+              <span class="tag bg-orange-600 text-white">Optimization</span>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              <a href="https://play.google.com/store/search?q=champion%20chase&c=apps&hl=en_IN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-2 rounded-xl">Play Store search</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="flex items-start justify-between gap-4 mb-5">
+              <div>
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Multiplayer + Backend</p>
+                <h3 class="text-2xl font-bold text-slate-900">KhelFactory</h3>
+                <p class="text-slate-500 mt-2">Sunset PvP platform project spanning Unity client and service-side systems.</p>
+              </div>
+              <div class="icon-box">KF</div>
+            </div>
+            <p class="text-slate-600 leading-relaxed mb-5">Worked across Unity gameplay, multiplayer synchronization, and service-side systems for player data and shared game logic.</p>
+            <div class="callout mb-5">
+              <strong class="text-slate-900">Why it matters:</strong> shows cross-stack game engineering range even without a public link today.<br>
+              <strong class="text-slate-900">What this proves:</strong> stronger systems thinking beyond isolated gameplay features.
+            </div>
+            <div class="flex flex-wrap gap-2 mb-5">
+              <span class="tag bg-rose-600 text-white">Multiplayer</span>
+              <span class="tag bg-green-600 text-white">Node.js</span>
+              <span class="tag bg-green-700 text-white">MongoDB</span>
+            </div>
+            <div class="text-sm text-slate-500 font-medium">No public link available. Sunset project.</div>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="case-studies" class="py-24 bg-white border-t border-slate-200">
+      <div class="container mx-auto px-6">
+        <div class="flex items-center justify-between gap-6 mb-12 flex-wrap">
+          <div class="max-w-3xl">
+            <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase block mb-2">Case Studies</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Deeper project breakdowns for technical reviewers</h2>
+            <p class="text-slate-600 text-lg leading-relaxed">Each case study is structured to answer the questions hiring managers actually ask: what problem needed solving, what I owned, how I approached it, what tradeoffs mattered, and what public proof is available.</p>
+          </div>
+          <a href="https://play.google.com/store/search?q=champion%20chase&c=apps&hl=en_IN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-800 text-sm font-bold bg-indigo-50 px-4 py-3 rounded-xl">Champion Chase on Play Store</a>
+        </div>
+        <div class="grid xl:grid-cols-[1.4fr_0.6fr] gap-8 items-start">
+          <article class="card">
+            <div class="flex justify-between gap-4 mb-6">
+              <div>
+                <h3 class="text-3xl font-bold text-slate-900">Champion Chase</h3>
+                <p class="text-slate-500 mt-2">Hybrid-casual action survival game for Android</p>
+              </div>
+              <div class="icon-box">CC</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Overview</p>
+                <p class="text-slate-600 leading-relaxed">Champion Chase was built as the studio's first serious hybrid-casual title: accessible survival combat layered with upgrades, themed worlds, boss encounters, and a lightweight gems-and-coins economy. It shipped on Google Play with ads and in-app purchases, giving the team a real production release to launch and iterate on.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Problem</p>
+                <p class="text-slate-600 leading-relaxed">The studio needed a title that moved beyond simple arcade execution into a more product-shaped mobile game with progression hooks, content variety, monetization, and room for post-launch updates.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">My Role</p>
+                <p class="text-slate-600 leading-relaxed">Team Lead and Senior Unity Developer. I led technical execution in Unity, shaped the gameplay architecture and feature roadmap, implemented UI and core systems, and helped take the game from concept to live release and later updates.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Team</p>
+                <p class="text-slate-600 leading-relaxed">Small indie team setup. I led engineering execution across development and release.</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Technical Approach</p>
+                <p class="text-slate-600 leading-relaxed">The game was structured around short action sessions backed by persistent progression. I focused on reusable gameplay and UI systems so new abilities, upgrades, worlds, and balance updates could be added without turning the project into one-off feature code.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Key Systems and Decisions</p>
+                <ul class="text-slate-600 leading-relaxed list-disc pl-5 space-y-2">
+                  <li>Designed for hybrid-casual progression instead of a flat score-chaser loop.</li>
+                  <li>Kept combat abilities extensible so powers and upgrades could scale with content.</li>
+                  <li>Structured progression through themed worlds, escalation, and boss encounters.</li>
+                  <li>Shipped in a way that supported post-launch fixes and additional level content.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Constraints and Tradeoffs</p>
+                <p class="text-slate-600 leading-relaxed">The project needed to stay accessible and lightweight for mobile players while still feeling like a fuller product with progression, monetization, and enough content variety to justify live iteration after launch.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Outcome and Impact</p>
+                <p class="text-slate-600 leading-relaxed">Champion Chase shipped publicly on Google Play, reached a live store rating of 5.0 from 12 reviews and 50+ downloads on the listing you shared, and received post-launch updates including bug fixes and a new level. The strongest signal here is not scale but proof of shipping, learning, and iteration.</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Media and Proof</p>
+                <p class="text-slate-600 leading-relaxed mb-4">Public proof now includes production screenshots showing live combat density, the store-facing challenge loop, and the upgrade economy. Together they support the gameplay, progression, and product framing described in this case study.</p>
+                <div class="grid sm:grid-cols-3 gap-4">
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
+                    <img src="images/champion-chase-1.webp" alt="Champion Chase gameplay screenshot showing survival combat, enemy density, and active projectile systems." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Live gameplay view showing screen pressure, enemy density, and layered combat effects.</figcaption>
+                  </figure>
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
+                    <img src="images/champion-chase-2.webp" alt="Champion Chase promotional screenshot highlighting survival gameplay and challenge-focused positioning." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Store-facing visual framing the core survival loop and accessible hybrid-casual pitch.</figcaption>
+                  </figure>
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
+                    <img src="images/champion-chase-3.webp" alt="Champion Chase upgrade screen showing upgrade choices and progression economy elements." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Upgrade screen reinforcing progression design, player choices, and economy hooks.</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Future Improvements</p>
+                <p class="text-slate-600 leading-relaxed">The next upgrade for this case study is a short gameplay clip or diagram that explains how combat abilities, progression, and post-launch content updates were structured under the hood.</p>
+              </div>
+            </div>
+          </article>
+          <aside class="space-y-6">
+            <div class="card">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">Stack</p>
+              <p class="text-slate-600 leading-relaxed">Unity, C#, Android, Google Play deployment, ads, and in-app purchases.</p>
+            </div>
+            <div class="card">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">Links</p>
+              <div class="flex flex-col gap-3">
+                <a href="https://play.google.com/store/search?q=champion%20chase&c=apps&hl=en_IN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-3 rounded-xl">Play Store search</a>
+                <p class="text-sm text-slate-500">Play Store screenshots are the current public media source.</p>
+              </div>
+            </div>
+            <div class="card">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">More Projects</p>
+              <div class="space-y-6">
                 <div>
-                    <h1 class="font-bold text-slate-900 tracking-tight leading-none text-base md:text-lg">Ashutosh Kale</h1>
-                    <span class="hidden sm:block text-xs text-slate-500 font-semibold tracking-wide">TEAM LEAD & UNITY DEVELOPER</span>
+                  <h4 class="text-lg font-bold text-slate-900">Bright Words</h4>
+                  <p class="text-slate-600 text-sm leading-relaxed mb-3">Live word puzzle game built for scalable content operations, remote tuning, and lightweight multiplayer.</p>
+                  <a href="#bright-words-study" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-2 rounded-xl">View case study</a>
                 </div>
-            </div>
-
-            <nav class="hidden md:flex items-center space-x-1 bg-white/50 p-1.5 rounded-full border border-slate-200/60 backdrop-blur-sm shadow-sm">
-                <a href="#hero" class="nav-item flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm text-slate-500 hover:text-indigo-600 hover:bg-indigo-50">
-                    <i data-lucide="terminal" class="w-4 h-4"></i><span>Overview</span>
-                </a>
-                <a href="#skills" class="nav-item flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm text-slate-500 hover:text-indigo-600 hover:bg-indigo-50">
-                    <i data-lucide="cpu" class="w-4 h-4"></i><span>Skills</span>
-                </a>
-                <a href="#experience" class="nav-item flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm text-slate-500 hover:text-indigo-600 hover:bg-indigo-50">
-                    <i data-lucide="briefcase" class="w-4 h-4"></i><span>Journey</span>
-                </a>
-                <a href="#projects" class="nav-item flex items-center space-x-2 px-4 py-2 rounded-full transition-all duration-300 font-medium text-sm text-slate-500 hover:text-indigo-600 hover:bg-indigo-50">
-                    <i data-lucide="layers" class="w-4 h-4"></i><span>Projects</span>
-                </a>
-            </nav>
-
-            <!-- Resume Button: Visible on Mobile now -->
-            <a href="https://drive.google.com/file/d/114osjtvp6-rs__iOFh8W-CHExYngrXcY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 bg-slate-900 hover:bg-slate-800 text-white px-3 py-2 md:px-5 md:py-2.5 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm transition-all shadow-lg hover:shadow-xl shrink-0">
-                <i data-lucide="download" class="w-3 h-3 md:w-4 md:h-4"></i><span>Resume</span>
-            </a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section id="hero" class="min-h-screen flex items-center pt-28 md:pt-24 relative overflow-hidden bg-white">
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-slate-50/50 clip-path-slant hidden lg:block"></div>
-        <div class="absolute -top-24 -right-24 w-96 h-96 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
-        <div class="absolute top-1/2 -left-24 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-50"></div>
-        
-        <div class="container mx-auto px-6 relative z-10 grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div class="space-y-6">
-                <!-- Status Tag: Increased width for mobile to prevent cutoff -->
-                <div class="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 md:py-2 bg-blue-50 border border-blue-100 rounded-full overflow-hidden max-w-full">
-                    <span class="w-2 h-2 bg-blue-600 rounded-full animate-pulse flex-shrink-0"></span>
-                    <div class="h-5 overflow-hidden relative w-[220px] sm:w-64">
-                         <span id="tag-text" class="text-blue-700 text-xs font-bold tracking-wide uppercase absolute w-full transition-all duration-500 whitespace-nowrap">Open to Senior Unity Roles</span>
-                    </div>
-                </div>
-                
-                <!-- Headline: Adjusted font size for mobile -->
-                <div class="min-h-[140px] md:min-h-[160px] lg:min-h-[220px] flex flex-col justify-center py-2">
-                    <h1 class="text-4xl sm:text-5xl lg:text-7xl font-bold text-slate-900 leading-[1.1] tracking-tight">
-                        <span id="headline-prefix" class="block transition-all duration-500 opacity-100 translate-y-0">Building</span>
-                        <span id="headline-highlight" class="block pb-2 transition-all duration-700 opacity-100 translate-x-0 text-gradient from-blue-600 to-indigo-600">Scalable Unity Games That Perform</span>
-                    </h1>
-                </div>
-                
-                <p class="text-base md:text-lg text-slate-600 max-w-lg leading-relaxed font-medium pt-2">
-                    Senior Unity Developer with <span class="text-slate-900 font-bold">7+ years</span> of experience shipping mobile and multiplayer game experiences. 
-                    Strongest in <span class="text-indigo-600 font-semibold">gameplay architecture, performance optimization, live game systems,</span> and leading teams that ship polished features for products at scale, including <span class="text-slate-900 font-semibold">Ludo King</span>.
-                </p>
-                
-                <div class="flex flex-col sm:flex-row gap-4 pt-4">
-                    <a href="#projects" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-2 transition-all shadow-lg shadow-indigo-600/20 hover:-translate-y-1">
-                        <i data-lucide="gamepad-2" class="w-5 h-5"></i><span>View Projects</span>
-                    </a>
-                    <a href="#contact" class="bg-white hover:bg-slate-50 text-slate-700 px-8 py-4 rounded-xl font-bold border border-slate-200 flex items-center justify-center space-x-2 transition-all shadow-sm hover:shadow-md hover:-translate-y-1">
-                        <i data-lucide="mail" class="w-5 h-5"></i><span>Contact Me</span>
-                    </a>
-                </div>
-
-                <!-- Socials -->
-                <div class="flex items-center space-x-6 pt-6 text-slate-400">
-                    <a href="https://github.com/logan-ak47" target="_blank" rel="noopener noreferrer" class="hover:text-slate-900 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
-                    <a href="https://www.linkedin.com/in/ashutosh-kale-990687127/" target="_blank" rel="noopener noreferrer" class="hover:text-blue-600 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-                    <div class="h-6 w-px bg-slate-200"></div>
-                    <div class="flex items-center space-x-2 text-sm font-semibold text-slate-500">
-                        <i data-lucide="graduation-cap" class="w-5 h-5 text-indigo-500"></i>
-                        <span>M.Sc Computer Science</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Stats -->
-            <div class="relative hidden lg:block">
-                <div class="relative bg-white border border-slate-100 p-8 rounded-3xl shadow-2xl shadow-slate-200/50">
-                    <div class="flex justify-between items-center mb-8 border-b border-slate-100 pb-6">
-                        <div>
-                            <h3 class="text-lg font-bold text-slate-900">Career Impact</h3>
-                            <p class="text-slate-500 text-sm">Performance & Scale</p>
-                        </div>
-                        <div class="bg-indigo-50 p-2 rounded-lg"><i data-lucide="sparkles" class="w-5 h-5 text-indigo-600"></i></div>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all flex items-center space-x-4">
-                            <div class="p-3 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="users" class="w-6 h-6"></i></div>
-                            <div><h4 class="text-2xl font-bold text-slate-800 tracking-tight">500M+</h4><p class="text-slate-500 text-xs font-semibold uppercase">Players Reached</p></div>
-                        </div>
-                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all flex items-center space-x-4">
-                            <div class="p-3 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="briefcase" class="w-6 h-6"></i></div>
-                            <div><h4 class="text-2xl font-bold text-slate-800 tracking-tight">7+ Yrs</h4><p class="text-slate-500 text-xs font-semibold uppercase">Experience</p></div>
-                        </div>
-                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all flex items-center space-x-4">
-                            <div class="p-3 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="server" class="w-6 h-6"></i></div>
-                            <div><h4 class="text-2xl font-bold text-slate-800 tracking-tight">Live Ops</h4><p class="text-slate-500 text-xs font-semibold uppercase">Backend & Tooling</p></div>
-                        </div>
-                        <div class="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-all flex items-center space-x-4">
-                            <div class="p-3 rounded-xl bg-indigo-50 text-indigo-600"><i data-lucide="trophy" class="w-6 h-6"></i></div>
-                            <div><h4 class="text-2xl font-bold text-slate-800 tracking-tight">Lead</h4><p class="text-slate-500 text-xs font-semibold uppercase">Team Management</p></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="py-24 bg-white relative">
-        <div class="container mx-auto px-6">
-            <div class="mb-16">
-                <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase mb-2 block">Core Skills</span>
-                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">What I Bring To A Game Team</h2>
-            </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300 group h-full">
-                    <div class="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center mb-6"><i data-lucide="gamepad-2" class="w-6 h-6"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-4">Core Engines</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Unity 2D/3D</span><span class="skill-tag">C#</span>
-                        <span class="skill-tag">UI Toolkit</span><span class="skill-tag">State Machines</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300 group h-full">
-                    <div class="w-12 h-12 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6"><i data-lucide="network" class="w-6 h-6"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-4">Backend & Net</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Node.js</span><span class="skill-tag">Photon PUN</span>
-                        <span class="skill-tag">Netcode</span><span class="skill-tag">MongoDB</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300 group h-full">
-                    <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-600 flex items-center justify-center mb-6"><i data-lucide="zap" class="w-6 h-6"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-4">Performance</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Addressables</span><span class="skill-tag">Frame Debugger</span>
-                        <span class="skill-tag">Profiling</span><span class="skill-tag">Memory Tuning</span>
-                    </div>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-lg transition-all duration-300 group h-full">
-                    <div class="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6"><i data-lucide="box" class="w-6 h-6"></i></div>
-                    <h3 class="text-lg font-bold text-slate-900 mb-4">Architecture</h3>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="skill-tag">Modular Systems</span><span class="skill-tag">Event-Driven</span>
-                        <span class="skill-tag">CI/CD</span><span class="skill-tag">Agile/Scrum</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Timeline -->
-    <section id="experience" class="py-24 bg-slate-50 border-t border-slate-200">
-        <div class="container mx-auto px-6">
-            <div class="flex items-center gap-4 mb-16">
-                <div class="p-3 bg-indigo-100 rounded-2xl text-indigo-700"><i data-lucide="briefcase" class="w-8 h-8"></i></div>
                 <div>
-                    <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase">Career Path</span>
-                    <h2 class="text-3xl md:text-3xl font-bold text-slate-900">Professional Journey</h2>
+                  <h4 class="text-lg font-bold text-slate-900">Ludo King</h4>
+                  <p class="text-slate-600 text-sm leading-relaxed mb-3">Platform adaptation work for a massive live multiplayer game across TV and Windows-style contexts.</p>
+                  <a href="#ludo-king-study" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-2 rounded-xl">View case study</a>
                 </div>
-            </div>
-
-            <div class="relative border-l-2 border-slate-200 ml-3 md:ml-6 space-y-12 pb-12">
-                
-                <!-- Role 1: Rightsol -->
-                <div class="relative pl-8 md:pl-12 group">
-                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-indigo-600 shadow-sm"></span>
-                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
-                        <h3 class="text-xl md:text-2xl font-bold text-slate-900">Team Lead - Game Development</h3>
-                        <span class="inline-block px-3 py-1 rounded-full bg-indigo-100 text-indigo-700 text-xs font-bold uppercase tracking-wide">Nov 2023 - Present</span>
-                    </div>
-                    <h4 class="text-slate-600 font-medium text-lg mb-4">Rightsol Private Limited / Programming Hub</h4>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                        <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
-                            <li>Led end-to-end development for <strong>Champion Chase</strong> and <strong>Bright Words</strong>, owning gameplay loops, progression, and delivery planning.</li>
-                            <li>Architected reusable systems with <strong>UI Toolkit</strong> and <strong>Addressables</strong>, reducing app size by ~30% and improving content scalability.</li>
-                            <li>Removed GC spikes and rendering stutters through profiling, memory tuning, and frame-level optimization in Unity.</li>
-                            <li>Mentored developers, ran sprint planning, and coordinated backend integration for live-ops and content updates.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Role 2: UST Global -->
-                <div class="relative pl-8 md:pl-12 group">
-                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-slate-300 group-hover:border-indigo-400 transition-colors shadow-sm"></span>
-                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
-                        <h3 class="text-lg md:text-xl font-bold text-slate-900">Software Developer Engineer I</h3>
-                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wide">Jul 2022 - Nov 2023</span>
-                    </div>
-                    <h4 class="text-slate-600 font-medium text-lg mb-4">UST Global Pvt. Ltd.</h4>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                         <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
-                            <li>Built internal tools with <strong>Node.js & JavaScript</strong> and designed REST APIs to support front-end workflows.</li>
-                            <li>Worked with Configura CET to model and configure complex 3D warehouse layouts for enterprise use cases.</li>
-                            <li>Automated recurring workflows, reducing turnaround time by ~25% across cross-functional teams.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Role 3: Freelance / ROKIT -->
-                <div class="relative pl-8 md:pl-12 group">
-                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-slate-300 group-hover:border-indigo-400 transition-colors shadow-sm"></span>
-                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
-                        <h3 class="text-lg md:text-xl font-bold text-slate-900">Freelance Unity Developer</h3>
-                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wide">Feb 2022 - Jul 2022</span>
-                    </div>
-                    <h4 class="text-slate-600 font-medium text-lg mb-4">ROKIT Games</h4>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                         <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
-                            <li>Prototyped gameplay systems and modular Unity components to speed up iteration on new feature ideas.</li>
-                            <li>Integrated backend endpoints and telemetry hooks to support faster balancing and product decisions.</li>
-                            <li>Refactored legacy code into cleaner, more testable C# architecture for smoother feature delivery.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Role 4: Gametion -->
-                <div class="relative pl-8 md:pl-12 group">
-                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-slate-300 group-hover:border-indigo-400 transition-colors shadow-sm"></span>
-                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
-                        <h3 class="text-lg md:text-xl font-bold text-slate-900">Game Developer</h3>
-                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wide">Jan 2021 - Jul 2022</span>
-                    </div>
-                    <h4 class="text-slate-600 font-medium text-lg mb-4">Gametion Technologies (Ludo King)</h4>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                        <div class="mb-3 pb-3 border-b border-slate-100">
-                            <p class="text-indigo-600 font-bold text-sm flex items-center gap-2">
-                                <i data-lucide="trophy" class="w-4 h-4"></i> Key Impact: Ludo King (500M+ Downloads)
-                            </p>
-                        </div>
-                        <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
-                            <li>Built voice-chat prototypes and shipped UI feature improvements for a globally scaled live game.</li>
-                            <li>Supported TV and mobile platform adaptations with optimized input handling and better usability.</li>
-                            <li>Collaborated with design and art teams to maintain stability for a product serving 50M+ daily active users.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Role 5: KhelGroup -->
-                <div class="relative pl-8 md:pl-12 group">
-                    <span class="absolute -left-[9px] top-1.5 h-5 w-5 rounded-full bg-white border-4 border-slate-300 group-hover:border-indigo-400 transition-colors shadow-sm"></span>
-                    <div class="mb-2 flex flex-col sm:flex-row sm:items-center sm:gap-4">
-                        <h3 class="text-lg md:text-xl font-bold text-slate-900">Software Developer</h3>
-                        <span class="inline-block px-3 py-1 rounded-full bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wide">Aug 2017 - Jan 2021</span>
-                    </div>
-                    <h4 class="text-slate-600 font-medium text-lg mb-4">The KhelGroup Pvt. Ltd.</h4>
-                    <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                        <ul class="text-slate-600 space-y-3 list-disc ml-4 leading-relaxed marker:text-indigo-400 text-sm md:text-base">
-                            <li>Built <strong>Feed Us Pirates</strong> with ownership across level setup, animation pipelines, and UI implementation.</li>
-                            <li>Designed <strong>KhelFactory</strong>, a real-money PvP hub, with multiplayer systems and reliable data sync.</li>
-                            <li>Developed backend CRUD services in <strong>Node.js + MongoDB</strong> for leaderboards, sessions, and player data.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Grid -->
-    <section id="projects" class="py-24 bg-white relative">
-        <div class="container mx-auto px-6">
-            <div class="flex items-center justify-between mb-12">
                 <div>
-                    <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase mb-2 block">Selected Work</span>
-                    <h2 class="text-3xl md:text-3xl font-bold text-slate-900">Selected Projects</h2>
+                  <h4 class="text-lg font-bold text-slate-900">KhelFactory</h4>
+                  <p class="text-slate-600 text-sm leading-relaxed">Cross-stack multiplayer and backend-oriented game systems.</p>
                 </div>
-                <a href="https://logan-ak47.itch.io/" target="_blank" rel="noopener noreferrer" class="hidden md:flex items-center gap-2 text-indigo-600 hover:text-indigo-800 transition-colors text-sm font-bold bg-indigo-50 px-4 py-2 rounded-lg">
-                    View Itch.io <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
+              </div>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Ludo King -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
-                    <div class="flex flex-col h-full">
-                        <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Ludo King</h3><span class="badge">Featured</span></div>
-                            <div class="icon-box"><i data-lucide="crown" class="w-5 h-5"></i></div>
-                        </div>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Contributed UI features, gameplay polish, and prototype work for one of the world's most downloaded mobile games.</p>
-                        <div class="mb-4 p-2 bg-amber-50 rounded border border-amber-100 text-xs font-bold text-amber-700 flex gap-2"><i data-lucide="trophy" class="w-4 h-4"></i> 500M+ Downloads</div>
-                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Unity</span><span class="tag">High Scale</span></div>
-                    </div>
-                </div>
-
-                <!-- Champion Chase -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
-                    <div class="flex flex-col h-full">
-                        <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Champion Chase</h3></div>
-                            <div class="icon-box"><i data-lucide="zap" class="w-5 h-5"></i></div>
-                        </div>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Led development of a superhero 2D semi-casual title with modular systems, scalable content delivery, and rendering optimizations.</p>
-                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Unity 2D</span><span class="tag">Addressables</span></div>
-                    </div>
-                </div>
-
-                <!-- Rokit All Star Racing -->
-                 <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
-                    <div class="flex flex-col h-full">
-                        <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Rokit All Star Racing</h3></div>
-                            <div class="icon-box"><i data-lucide="car" class="w-5 h-5"></i></div>
-                        </div>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Improved gameplay feel, resolved high-visibility UI issues, and stabilized a live racing title for better player experience.</p>
-                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Bug Fixes</span><span class="tag">Gameplay</span></div>
-                    </div>
-                </div>
-
-                <!-- Bright Words -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
-                    <div class="flex flex-col h-full">
-                        <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Bright Words</h3></div>
-                            <div class="icon-box"><i data-lucide="type" class="w-5 h-5"></i></div>
-                        </div>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Built a word-puzzle game with UI Toolkit, maintainable state management, and lightweight content tooling for faster iteration.</p>
-                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">UI Toolkit</span><span class="tag">Tooling</span></div>
-                    </div>
-                </div>
-
-                <!-- KhelFactory -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
-                    <div class="flex flex-col h-full">
-                        <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">KhelFactory</h3></div>
-                            <div class="icon-box"><i data-lucide="server" class="w-5 h-5"></i></div>
-                        </div>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Built a PvP gaming hub with multiplayer support, backend services, and modular minigames connected through shared systems.</p>
-                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">Multiplayer</span><span class="tag">Node.js</span></div>
-                    </div>
-                </div>
-
-                 <!-- Feed Us Pirates -->
-                 <div class="bg-white p-8 rounded-2xl border border-slate-200 hover:border-indigo-300 hover:shadow-xl transition-all duration-300 group flex flex-col h-full hover:-translate-y-1">
-                    <div class="flex flex-col h-full">
-                        <div class="flex justify-between items-start mb-4">
-                            <div><h3 class="text-xl font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">Feed Us Pirates</h3></div>
-                            <div class="icon-box"><i data-lucide="anchor" class="w-5 h-5"></i></div>
-                        </div>
-                        <p class="text-slate-600 text-sm mb-6 flex-grow">Owned inventory and UI implementation for a 2D game while supporting animation-heavy gameplay presentation.</p>
-                        <div class="flex flex-wrap gap-2 mt-auto"><span class="tag">2D</span><span class="tag">Inventory</span></div>
-                    </div>
-                </div>
-            </div>
+          </aside>
         </div>
+      </div>
     </section>
-
-    <!-- Footer -->
+    <section id="ludo-king-study" class="py-24 bg-white border-t border-slate-200">
+      <div class="container mx-auto px-6">
+        <div class="grid xl:grid-cols-[1.4fr_0.6fr] gap-8 items-start">
+          <article class="card">
+            <div class="flex justify-between gap-4 mb-6">
+              <div>
+                <h3 class="text-3xl font-bold text-slate-900">Ludo King</h3>
+                <p class="text-slate-500 mt-2">Platform adaptation for TV and Windows-style play</p>
+              </div>
+              <div class="icon-box">LK</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Overview</p>
+                <p class="text-slate-600 leading-relaxed">Ludo King is a large-scale live multiplayer board game product. My work focused on extending the experience beyond its portrait mobile roots by helping adapt it for TV and Windows-oriented contexts, including landscape UI conversion, platform-fit interaction changes, and prototype validation around voice chat.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Problem</p>
+                <p class="text-slate-600 leading-relaxed">A phone-first portrait game does not automatically translate well to larger screens. Layout, readability, navigation, and social interaction flows all need rethinking for TV and desktop-style environments while preserving the familiar multiplayer loop users already know.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">My Role</p>
+                <p class="text-slate-600 leading-relaxed">Platform-focused Unity Engineer working on porting and UX adaptation. I helped convert core game flows and UI from portrait to landscape, adapted interaction patterns for larger-screen contexts, and validated multiplayer and voice-chat behavior in the adapted experience.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Team</p>
+                <p class="text-slate-600 leading-relaxed">Worked within a larger live-game team across engineering, UI, QA, and release stakeholders.</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Technical Approach</p>
+                <p class="text-slate-600 leading-relaxed">The work was about proper platform adaptation rather than simply scaling the original UI. I focused on preserving gameplay consistency while reworking screen use, readability, navigation, and input expectations for TV and Windows-style play.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Key Systems and Decisions</p>
+                <ul class="text-slate-600 leading-relaxed list-disc pl-5 space-y-2">
+                  <li>Converted the experience to landscape instead of relying on portrait-first layouts.</li>
+                  <li>Preserved familiar multiplayer flows while adapting platform UX.</li>
+                  <li>Treated input and navigation as platform-specific concerns.</li>
+                  <li>Prototype-tested voice chat behavior in the adapted context before overcommitting.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Constraints and Tradeoffs</p>
+                <p class="text-slate-600 leading-relaxed">Because this was a scaled live product, changes had to respect the familiarity of the core experience while making it workable for non-phone environments with different viewing distance, navigation patterns, and platform expectations.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Outcome and Impact</p>
+                <p class="text-slate-600 leading-relaxed">I contributed to platform adaptation on one of the world''s largest casual multiplayer games. The public footprint currently shows 100Cr+ downloads, 1Cr+ reviews, Windows availability, and a dedicated Android TV presence. The strongest portfolio signal here is platform translation work inside a massive live product, not ownership of the core game itself.</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Media and Proof</p>
+                <p class="text-slate-600 leading-relaxed mb-4">Public proof now includes both landscape TV-style screens and portrait mobile product shots. Together they make the platform-adaptation story easier to evaluate: what the original mobile experience looked like, what larger-screen layout required, and how social features such as voice chat fit into the shipped product context.</p>
+                <div class="grid sm:grid-cols-2 gap-4">
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 sm:col-span-2">
+                    <img src="images/ludo-king-1.webp" alt="Ludo King TV-oriented home screen showing a landscape-friendly menu layout for larger screens." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Landscape home screen showing the larger-screen menu treatment and clearer couch-distance readability.</figcaption>
+                  </figure>
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 sm:col-span-2">
+                    <img src="images/ludo-king-2.webp" alt="Ludo King landscape interface showing TV-style presentation and wider layout treatment." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">A second TV-style view reinforcing the move from portrait assumptions to wider layout decisions.</figcaption>
+                  </figure>
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
+                    <img src="images/ludo-king-3.webp" alt="Ludo King portrait gameplay screenshot highlighting real-time voice chat inside the mobile multiplayer interface." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Portrait gameplay context showing how voice chat fit into the live multiplayer product.</figcaption>
+                  </figure>
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
+                    <img src="images/ludo-king-4.webp" alt="Ludo King portrait screenshot featuring six-player mode on the mobile product." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Mobile product proof showing the broader multiplayer feature set the porting work had to stay consistent with.</figcaption>
+                  </figure>
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 sm:col-span-2">
+                    <img src="images/ludo-king-5.webp" alt="Ludo King portrait screenshot of six-player board layout in the mobile interface." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Portrait board layout that helps explain the original mobile-first framing behind the adaptation work.</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Future Improvements</p>
+                <p class="text-slate-600 leading-relaxed">The strongest next upgrade here would be a simple annotated before-and-after comparison showing how navigation, spacing, and readability changed between portrait mobile and landscape TV contexts.</p>
+              </div>
+            </div>
+          </article>
+          <aside class="space-y-6">
+            <div class="card">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">Stack</p>
+              <p class="text-slate-600 leading-relaxed">Unity, C#, Android, Android TV, Windows-oriented adaptation, landscape UI work, platform-specific input/navigation handling, multiplayer client flows, and voice-chat prototype validation.</p>
+            </div>
+            <div class="card">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">Public Product Links</p>
+              <div class="flex flex-col gap-3">
+                <a href="https://play.google.com/store/apps/details?id=com.ludo.king&hl=en_IN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-3 rounded-xl">Main Play Store listing</a>
+                <a href="https://play.google.com/store/search?q=ludo%20king%20tv&c=apps&hl=en_IN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-3 rounded-xl">Android TV listing</a>
+                <p class="text-sm text-slate-500">Store screenshots and trailer are the current public media source.</p>
+              </div>
+            </div>
+            <div class="card">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">What This Proves</p>
+              <p class="text-slate-600 text-sm leading-relaxed">This work shows that I can operate safely inside a very large live codebase and adapt an existing product to new platforms without losing usability or product familiarity.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section id="bright-words-study" class="py-24 bg-slate-50 border-t border-slate-200">
+      <div class="container mx-auto px-6">
+        <div class="grid xl:grid-cols-[1.4fr_0.6fr] gap-8 items-start">
+          <article class="card">
+            <div class="flex justify-between gap-4 mb-6">
+              <div>
+                <h3 class="text-3xl font-bold text-slate-900">Bright Words</h3>
+                <p class="text-slate-500 mt-2">Live mobile word puzzle game with scalable content operations</p>
+              </div>
+              <div class="icon-box">BW</div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Overview</p>
+                <p class="text-slate-600 leading-relaxed">Bright Words combines word search, crossword, and scramble mechanics with positivity-themed content such as affirmations and motivational quotes. From an engineering perspective, the important part was making the game scalable both as gameplay and as a content product, with large level progression, remotely updateable content, and lightweight multiplayer support.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Problem</p>
+                <p class="text-slate-600 leading-relaxed">The product needed to do more than ship a fixed set of puzzle levels. It had to support a large and extensible level catalog, ongoing tuning, and updates without depending on a full client release for every change.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">My Role</p>
+                <p class="text-slate-600 leading-relaxed">Team Lead and Senior Unity Developer. I led technical execution in Unity across gameplay systems, UI, scalable level and content handling, live-ops-friendly configuration flows, and lightweight multiplayer support.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Team</p>
+                <p class="text-slate-600 leading-relaxed">Built within a small indie team where I covered broad technical scope across gameplay, architecture, and release support.</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mb-8">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Technical Approach</p>
+                <p class="text-slate-600 leading-relaxed">I treated Bright Words as a content-driven product rather than a hardcoded puzzle app. Levels and content were designed to be maintainable at scale, with JSON-driven data and Remote Config support so selected tuning and content behavior could evolve without constant rebuilds.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Key Systems and Decisions</p>
+                <ul class="text-slate-600 leading-relaxed list-disc pl-5 space-y-2">
+                  <li>Separated level and content data from hardcoded client logic.</li>
+                  <li>Used Firebase Remote Config for live tuning and operational flexibility.</li>
+                  <li>Kept multiplayer lightweight and practical for the product scope.</li>
+                  <li>Structured the game to support a large published level catalog more efficiently.</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Constraints and Tradeoffs</p>
+                <p class="text-slate-600 leading-relaxed">The challenge was balancing broad casual accessibility with enough operational flexibility to support ongoing content updates, daily-challenge style engagement, and a large level pipeline without making the app brittle to maintain.</p>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Outcome and Impact</p>
+                <p class="text-slate-600 leading-relaxed">Bright Words shipped publicly, reached 10K+ downloads on Google Play, maintained a 4.8-star rating across 356 reviews, and publicly promoted a catalog of 1000+ levels. The stronger portfolio signal is that it demonstrates scalable content architecture and live product thinking, not just puzzle implementation.</p>
+              </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Media and Proof</p>
+                <p class="text-slate-600 leading-relaxed mb-4">Public proof now includes production screenshots showing puzzle flow, content-driven presentation, and the game's motivational UI layer. Together they reinforce the case study's claims about scalable content handling and a polished live mobile product.</p>
+                <div class="grid sm:grid-cols-3 gap-4">
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
+                    <img src="images/bright-words-1.webp" alt="Bright Words gameplay screenshot showing puzzle layout and word-finding interface." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Core puzzle view showing the word-game interface and content presentation.</figcaption>
+                  </figure>
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
+                    <img src="images/bright-words-2.webp" alt="Bright Words screenshot showing progression or themed content presentation in the mobile UI." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Content-facing screen supporting the live-product and progression framing.</figcaption>
+                  </figure>
+                  <figure class="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50">
+                    <img src="images/bright-words-3.webp" alt="Bright Words screenshot showing additional puzzle or affirmation-focused UI elements." class="w-full h-64 object-cover" loading="lazy">
+                    <figcaption class="p-3 text-sm text-slate-600 leading-relaxed">Visual proof of the game's uplifting presentation and broad casual appeal.</figcaption>
+                  </figure>
+                </div>
+              </div>
+              <div>
+                <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-2">Future Improvements</p>
+                <p class="text-slate-600 leading-relaxed">The next upgrade for this case study is a short gameplay clip or architecture note that shows how JSON-driven content and Remote Config supported ongoing updates without frequent client rebuilds.</p>
+              </div>
+            </div>
+          </article>
+          <aside class="space-y-6">
+            <div class="card">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">Stack</p>
+              <p class="text-slate-600 leading-relaxed">Unity, C#, Android and iOS deployment, JSON-driven level data, Firebase Remote Config, ads, in-app purchases, and lightweight multiplayer.</p>
+            </div>
+            <div class="card">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">Links</p>
+              <div class="flex flex-col gap-3">
+                <a href="https://play.google.com/store/search?q=bright%20words&c=apps&hl=en_IN" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-3 rounded-xl">Play Store search</a>
+                <p class="text-sm text-slate-500">Store screenshots are the current public media source. App Store and product-site links can be added next.</p>
+              </div>
+            </div>
+            <div class="card">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">What This Proves</p>
+              <p class="text-slate-600 text-sm leading-relaxed">This project shows production-minded Unity engineering: scalable content systems, live tuning awareness, and pragmatic feature design for a shipped mobile game.</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section id="credibility" class="py-24 bg-slate-50 border-t border-slate-200">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mb-12">
+          <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase block mb-2">Impact & Credibility</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Signals that reduce hiring risk</h2>
+          <p class="text-slate-600 text-lg leading-relaxed">These signals are here to reduce hiring risk quickly: shipped work, leadership scope, large-product exposure, public proof, and engineering range beyond isolated gameplay features.</p>
+        </div>
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6 mb-8">
+          <div class="card">
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">7+ years</h3>
+            <p class="text-slate-600 leading-relaxed">Commercial Unity and game-development experience across shipped products, live updates, and leadership responsibility.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Team Lead</h3>
+            <p class="text-slate-600 leading-relaxed">Led planning, mentoring, and delivery while staying hands-on in architecture and implementation.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">500M+</h3>
+            <p class="text-slate-600 leading-relaxed">Contributed inside a product operating at very large public scale through Ludo King.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Cross-stack</h3>
+            <p class="text-slate-600 leading-relaxed">Unity client work backed by practical experience with backend services, data flows, and engineering integrations.</p>
+          </div>
+        </div>
+        <div class="card bg-white">
+          <div class="grid lg:grid-cols-[1fr_0.9fr] gap-8 items-start">
+            <div>
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">Hiring Confidence</p>
+              <h3 class="text-2xl font-bold text-slate-900 mb-4">Easy to verify, easy to evaluate</h3>
+              <p class="text-slate-600 leading-relaxed mb-5">The portfolio now surfaces shipped products, public store links, technical case studies, GitHub, LinkedIn, and a direct resume path so recruiters and hiring managers can validate fit quickly without digging.</p>
+              <div class="flex flex-wrap gap-3">
+                <a href="https://github.com/logan-ak47" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-3 rounded-xl">GitHub</a>
+                <a href="https://www.linkedin.com/in/ashutosh-kale-990687127/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-3 rounded-xl">LinkedIn</a>
+                <a href="https://drive.google.com/file/d/114osjtvp6-rs__iOFh8W-CHExYngrXcY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-semibold text-indigo-700 bg-indigo-50 px-4 py-3 rounded-xl">Resume</a>
+              </div>
+            </div>
+            <div class="rounded-2xl border border-slate-200 bg-slate-50 p-6">
+              <p class="text-xs font-bold uppercase tracking-[0.2em] text-indigo-600 mb-3">Availability</p>
+              <ul class="space-y-3 text-slate-600 leading-relaxed">
+                <li>Available for remote senior Unity roles.</li>
+                <li>Open to full-time and contract work.</li>
+                <li>Strong fit for gameplay, systems, tools, and multiplayer scope.</li>
+                <li>Public proof includes shipped products, case studies, and code profiles.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="remote-ready" class="py-24 bg-white border-t border-slate-200">
+      <div class="container mx-auto px-6">
+        <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-start">
+          <div>
+            <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase block mb-2">Remote-Ready</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Built for distributed teams, not just local delivery</h2>
+            <p class="text-slate-600 text-lg leading-relaxed mb-6">This section is designed to remove the common friction around cross-border hiring. It shows how I communicate, collaborate across time zones, document work clearly, and stay effective in remote product teams.</p>
+            <div class="space-y-4 text-slate-600">
+              <p>Comfortable coordinating across design, art, backend, QA, and production stakeholders with clear written and verbal communication.</p>
+              <p>Prefer documented decisions, scoped delivery, and reusable systems so distributed teams can move faster without carrying fragile code forward.</p>
+              <p>Used to async collaboration, written updates, and iterative product work rather than one-off handoff execution.</p>
+              <p>Comfortable taking ownership of systems or features end to end, including implementation, technical explanation, and follow-through after release.</p>
+            </div>
+          </div>
+          <aside class="card bg-slate-50">
+            <h3 class="text-xl font-bold text-slate-900 mb-5">Hiring Snapshot</h3>
+            <ul class="space-y-4 text-slate-600">
+              <li>Based in India (IST / UTC+5:30), with strong overlap for UK and EU teams and workable partial overlap for US teams.</li>
+              <li>Open to remote full-time and contract roles with senior IC or lead-leaning Unity scope.</li>
+              <li>Strongest when given clear ownership of gameplay systems, technical delivery, architecture decisions, and implementation quality.</li>
+              <li>Comfortable with async updates, written documentation, code reviews, and cross-functional collaboration in distributed teams.</li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section id="skills" class="py-24 bg-slate-50 border-t border-slate-200">
+      <div class="container mx-auto px-6">
+        <div class="max-w-3xl mb-12">
+          <span class="text-indigo-600 font-bold tracking-wider text-sm uppercase block mb-2">Technical Strengths</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Capabilities framed around delivery, not buzzwords</h2>
+          <p class="text-slate-600 text-lg leading-relaxed">Instead of generic skill bars, these strengths are framed around the production problems I can own and explain clearly.</p>
+        </div>
+        <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+          <div class="card">
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Gameplay & Systems</h3>
+            <p class="text-slate-600 leading-relaxed">Unity 2D and 3D, C#, gameplay loops, state handling, reusable systems, and maintainable feature delivery.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Performance & Scale</h3>
+            <p class="text-slate-600 leading-relaxed">Profiling, memory tuning, rendering optimization, Addressables, package-size reduction, and frame-level debugging.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Multiplayer & Services</h3>
+            <p class="text-slate-600 leading-relaxed">Photon PUN, multiplayer concepts, backend integration, Node.js, MongoDB, telemetry, and live data flows.</p>
+          </div>
+          <div class="card">
+            <h3 class="text-2xl font-bold text-slate-900 mb-3">Leadership & Process</h3>
+            <p class="text-slate-600 leading-relaxed">Sprint planning, mentoring, cross-functional coordination, architecture decisions, and delivery ownership.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section id="contact" class="py-24 bg-slate-900 text-white border-t border-slate-800">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-6">Open To Senior Unity Opportunities</h2>
-            <p class="text-slate-400 mb-10 max-w-xl mx-auto text-lg">Available for Senior Unity, Lead Gameplay, and Multiplayer-focused roles across mobile, live games, and feature teams.</p>
-            <div class="flex flex-col md:flex-row justify-center gap-6 mb-16">
-                <a href="mailto:kaleashutosh05@gmail.com" class="btn-primary w-full md:w-auto justify-center"><i data-lucide="mail" class="w-5 h-5"></i> kaleashutosh05@gmail.com</a>
-                <a href="tel:+919773698339" class="btn-secondary w-full md:w-auto justify-center"><i data-lucide="phone" class="w-5 h-5"></i> +91 97736 98339</a>
-            </div>
-            <p class="text-slate-500 text-sm">&copy; 2026 Ashutosh Kale</p>
+      <div class="container mx-auto px-6">
+        <div class="max-w-4xl mx-auto text-center">
+          <span class="text-indigo-300 font-bold tracking-wider text-sm uppercase block mb-2">Resume / Contact / Hiring</span>
+          <h2 class="text-3xl md:text-5xl font-bold mb-6">Available for remote senior Unity roles across gameplay, systems, tools, and multiplayer</h2>
+          <p class="text-slate-300 mb-10 text-lg leading-relaxed">If you are hiring for a Unity engineer who can ship, explain technical decisions clearly, and collaborate effectively across time zones, I would be glad to discuss the role.</p>
+          <div class="flex flex-col md:flex-row justify-center gap-4 mb-8">
+            <a href="mailto:kaleashutosh05@gmail.com" class="btn btn-primary w-full md:w-auto">Email Ashutosh</a>
+            <a href="https://drive.google.com/file/d/114osjtvp6-rs__iOFh8W-CHExYngrXcY/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn btn-secondary w-full md:w-auto">View Resume</a>
+            <a href="https://www.linkedin.com/in/ashutosh-kale-990687127/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary w-full md:w-auto">LinkedIn</a>
+          </div>
+          <p class="text-slate-400 text-sm mb-4">Available for remote senior Unity roles. Open to full-time and contract opportunities.</p>
+          <p class="text-slate-500 text-sm mb-2">Also reachable at <a href="tel:+919773698339" class="underline decoration-slate-600 underline-offset-4 hover:text-white">+91 97736 98339</a></p>
+          <p class="text-slate-500 text-sm">&copy; 2026 Ashutosh Kale</p>
         </div>
+      </div>
     </section>
-
-    <script>
-        lucide.createIcons();
-
-        // Reusable Styles Injection to keep HTML clean
-        const style = document.createElement('style');
-        style.innerHTML = `
-            .skill-tag { @apply px-3 py-1.5 bg-slate-50 text-slate-600 text-sm font-medium rounded-lg border border-slate-100; }
-            .badge { @apply bg-indigo-50 text-indigo-600 text-[10px] font-bold px-2 py-0.5 rounded-full border border-indigo-100 uppercase tracking-wide ml-2; }
-            .icon-box { @apply bg-indigo-50 p-2.5 rounded-xl text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300; }
-            .tag {
-                display: inline-block;
-                font-size: 0.75rem;
-                font-weight: 600;
-                padding: 0.5rem 0.875rem;
-                border-radius: 9999px;
-                transition: all 0.2s;
-            }
-            .btn-primary { @apply flex items-center gap-3 bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-xl font-bold transition-all hover:-translate-y-1 shadow-lg; }
-            .btn-secondary { @apply flex items-center gap-3 bg-white/10 hover:bg-white/20 text-white px-8 py-4 rounded-xl font-bold border border-white/10 transition-all hover:-translate-y-1 backdrop-blur-sm; }
-        `;
-        document.head.appendChild(style);
-
-        // Color project tags based on content
-        function colorProjectTags() {
-            const tagColors = {
-                'Unity': 'bg-blue-600 text-white',
-                'Unity 2D': 'bg-blue-600 text-white',
-                'High Scale': 'bg-purple-600 text-white',
-                'Addressables': 'bg-indigo-600 text-white',
-                'Bug Fixes': 'bg-amber-600 text-white',
-                'Gameplay': 'bg-emerald-600 text-white',
-                'UI Toolkit': 'bg-cyan-600 text-white',
-                'Tooling': 'bg-slate-600 text-white',
-                'Multiplayer': 'bg-rose-600 text-white',
-                'Node.js': 'bg-green-600 text-white',
-                '2D': 'bg-teal-600 text-white',
-                'Inventory': 'bg-orange-600 text-white'
-            };
-
-            document.querySelectorAll('.tag').forEach(tag => {
-                const text = tag.textContent.trim();
-                const colorClass = tagColors[text] || 'bg-slate-600 text-white';
-                tag.className = `tag ${colorClass}`;
-            });
+  </main>
+  <script>
+    lucide.createIcons();
+    const headlines = [
+      { prefix: 'Building', highlight: 'Unity Systems That Ship Reliably', color: 'from-blue-600 to-indigo-600' },
+      { prefix: 'Improving', highlight: 'Live Game Delivery At Commercial Scale', color: 'from-indigo-600 to-violet-600' },
+      { prefix: 'Leading', highlight: 'Gameplay, Systems, And Technical Execution', color: 'from-cyan-600 to-blue-600' }
+    ],
+    tags = [
+      'Available for Remote Senior Unity Roles',
+      'Available for Gameplay and Systems Teams',
+      'Open to Remote International Roles'
+    ];
+    let index = 0;
+    setInterval(() => {
+      const p = document.getElementById('headline-prefix'),
+        h = document.getElementById('headline-highlight'),
+        t = document.getElementById('tag-text');
+      [p, h, t].forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(10px)'
+      });
+      setTimeout(() => {
+        index = (index + 1) % headlines.length;
+        p.textContent = headlines[index].prefix;
+        h.textContent = headlines[index].highlight;
+        t.textContent = tags[index % tags.length];
+        h.className = `block pb-2 text-gradient ${headlines[index].color}`;
+        [p, h, t].forEach(el => {
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)'
+        })
+      }, 500)
+    }, 4000);
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('shadow-sm', 'py-3');
+        nav.classList.remove('py-4', 'md:py-6')
+      } else {
+        nav.classList.remove('shadow-sm', 'py-3');
+        nav.classList.add('py-4', 'md:py-6')
+      }
+    });
+    function updateActiveNav() {
+      const sections = document.querySelectorAll('section[id]'),
+        navItems = document.querySelectorAll('.nav-item');
+      let current = '';
+      const scroll = window.scrollY + 200;
+      sections.forEach(section => {
+        const top = section.offsetTop, height = section.offsetHeight;
+        if (scroll >= top && scroll < top + height) {
+          current = section.getAttribute('id')
         }
-
-        // Run on page load
-        setTimeout(colorProjectTags, 0);
-
-        // Animation Logic
-        const headlines = [
-            { prefix: "Building", highlight: "Scalable Unity Games That Perform", color: "from-blue-600 to-indigo-600" }, 
-            { prefix: "Optimizing", highlight: "Live Game Experiences At Massive Scale", color: "from-indigo-600 to-violet-600" }, 
-            { prefix: "Leading", highlight: "Gameplay, Multiplayer, And Delivery Teams", color: "from-cyan-600 to-blue-600" }
-        ];
-        const tags = ["Open to Senior Unity Roles", "Available for Lead Gameplay Teams", "Open to Multiplayer Opportunities"];
-        let index = 0;
-        
-        setInterval(() => {
-            const prefix = document.getElementById('headline-prefix');
-            const highlight = document.getElementById('headline-highlight');
-            const tag = document.getElementById('tag-text');
-            
-            [prefix, highlight, tag].forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(10px)'; });
-
-            setTimeout(() => {
-                index = (index + 1) % headlines.length;
-                prefix.textContent = headlines[index].prefix;
-                highlight.textContent = headlines[index].highlight;
-                tag.textContent = tags[index % tags.length];
-                highlight.className = `block pb-2 transition-all duration-700 opacity-100 translate-x-0 text-gradient ${headlines[index].color}`;
-                
-                [prefix, highlight, tag].forEach(el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; });
-            }, 500);
-        }, 4000);
-
-        // Navbar Scroll
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('navbar');
-            // Check if scroll is > 50 OR if it is mobile view (always add background for better visibility on mobile)
-            if (window.scrollY > 50 || window.innerWidth < 768) {
-                // Keep bg-white/80 on mobile always if prefered, but logic here respects scroll
-            }
-            // Actually, Tailwind classes on nav are static 'bg-white/80' in my update above for better mobile read.
-            // But if we want dynamic scroll effect on desktop:
-             if (window.scrollY > 50) {
-                 nav.classList.add('shadow-sm', 'py-3');
-                 nav.classList.remove('py-4', 'md:py-6');
-             } else {
-                 nav.classList.remove('shadow-sm', 'py-3');
-                 nav.classList.add('py-4', 'md:py-6');
-             }
-        });
-
-        // Active Navigation Highlighting
-        function updateActiveNav() {
-            const sections = document.querySelectorAll('section[id]');
-            const navItems = document.querySelectorAll('.nav-item');
-
-            let currentSection = '';
-            const scrollPosition = window.scrollY + 200; // Offset for better triggering
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.offsetHeight;
-
-                if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-
-            // If at the very top, highlight overview
-            if (window.scrollY < 100) {
-                currentSection = 'hero';
-            }
-
-            navItems.forEach(item => {
-                const href = item.getAttribute('href').substring(1); // Remove the '#'
-
-                if (href === currentSection) {
-                    item.classList.add('bg-indigo-600', 'text-white');
-                    item.classList.remove('text-slate-500', 'hover:bg-indigo-50');
-                } else {
-                    item.classList.remove('bg-indigo-600', 'text-white');
-                    item.classList.add('text-slate-500', 'hover:bg-indigo-50');
-                }
-            });
+      });
+      if (window.scrollY < 100) { current = 'hero' }
+      navItems.forEach(item => {
+        const href = item.getAttribute('href').substring(1);
+        if (href === current) {
+          item.classList.add('bg-indigo-600', 'text-white');
+          item.classList.remove('text-slate-500')
+        } else {
+          item.classList.remove('bg-indigo-600', 'text-white');
+          item.classList.add('text-slate-500')
         }
-
-        // Run on scroll and page load
-        window.addEventListener('scroll', updateActiveNav);
-        window.addEventListener('load', updateActiveNav);
-        updateActiveNav(); // Initial call
-    </script>
+      })
+    }
+    window.addEventListener('scroll', updateActiveNav);
+    window.addEventListener('load', updateActiveNav);
+    updateActiveNav();
+  </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
